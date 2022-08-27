@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-model结合select使用</title>
+</head>
+<body>
+<div id="app">
+  <label for="">
+    <select name="name" id="" v-model="name">
+      <option value="王二">王二</option>
+      <option value="薛嵩">薛嵩</option>
+      <option value="陈清扬">陈清杨</option>
+      <option value="红线">红线</option>
+      <option value="小转铃">小转铃</option>
+    </select>
+  </label>
+  <h2>{{name}}</h2>
+  <label for="">
+    <select name="name" v-model="names" multiple>
+      <option value="王二">王二</option>
+      <option value="薛嵩">薛嵩</option>
+      <option value="陈清扬">陈清杨</option>
+      <option value="红线">红线</option>
+      <option value="小转铃">小转铃</option>
+    </select>
+  </label>
+  <h2>您选择的人物是{{names}}</h2>
+  <br><br>
+</div>
+<script src="../vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+          message:'你好啊',
+          name:'王二',
+          names:[]
+        },
+        methods: {
+        }
+    })
+</script>
+</body>
+</html>

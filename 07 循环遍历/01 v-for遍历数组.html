@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for遍历数组</title>
+</head>
+<body>
+<div id="app">
+    <!--在遍历的过程中没有使用索引值-->
+    <ul>
+        <li v-for="i in name">{{i}}</li>
+    </ul>
+    <br><br>
+    <!--在遍历过程中获取索引值-->
+    <ul>
+        <li v-for="(i,index) in name">{{index+1}}—{{i}}</li>
+    </ul>
+</div>
+<script src="../vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+        name:['王二','陈清扬','小转铃','许由']
+        },
+        methods: {
+        }
+    })
+</script>
+</body>
+</html>

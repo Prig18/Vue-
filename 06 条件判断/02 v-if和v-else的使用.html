@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-if和v-else</title>
+</head>
+<body>
+<div id="app">
+  <div v-if="isShow">
+    <p>abc</p>
+    <p>abc</p>
+    <p>abc</p>
+    {{message}}
+  </div>
+  <h2 v-else>当v-show为flase时显示我</h2>
+</div>
+<script src="../vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+          message:'你好啊',
+          isShow:true
+        },
+        methods: {
+        }
+    })
+</script>
+</body>
+</html>

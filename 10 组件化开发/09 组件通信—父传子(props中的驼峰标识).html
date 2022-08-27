@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+  <cpn :cinfor="infor"></cpn>
+</div>
+
+<template id="cpn">
+  <div>
+    <h2>{{cinfor}}</h2>
+  </div>
+</template>
+
+<script src="../vue.js"></script>
+<script>
+   const cpn = {
+     template:'#cpn',
+     props:{
+       cinfor:{
+         type:Object,
+         default(){
+           return {}
+         },
+       }
+     }
+   }
+
+    const app = new Vue({
+      el: '#app',
+      data: {
+        message:'你好啊',
+        infor:{
+          name:'王二',
+          age:21,
+          height:1.85
+        }
+      },
+      components:{
+          cpn
+      },
+      methods: {
+
+      }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-show的使用</title>
+</head>
+<body>
+<div id="app">
+    <!--v-if: 当条件为false时，包含v-if的元素不会存在于Dom中-->
+    <h2 v-if="isShow" id="if">{{message}}</h2>
+    <!--v-show: 当条件为false时，包含v-show的元素添加一个行内元素： display:none-->
+    <h2 v-show="isShow" id="show">{{message}}</h2>
+</div>
+<script src="../vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            message:'你好哇',
+            isShow:true
+        },
+        methods: {
+        }
+    })
+</script>
+</body>
+</html>

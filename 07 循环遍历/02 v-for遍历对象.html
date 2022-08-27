@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for遍历对象</title>
+</head>
+<body>
+<div id="app">
+    <!--在遍历对象过程中只是获取一个值，获取到的时value-->
+    <ul>
+        <li v-for="i in info">{{i}}</li>
+    </ul>
+    <br><br>
+    <!--在遍历对象时获取两个值时，第一个值时value，第二个值是key-->
+    <ul>
+        <li v-for="(value,key) in info">{{value}}-{{key}}</li>
+    </ul>
+    <br><br>
+    <!--在遍历对象时获取获取三个值时，第一个值为value,第二个值为key,第三个值为index-->
+    <ul>
+        <li v-for="(value,key,index) in info">{{value}}-{{key}}-{{index}}</li>
+    </ul>
+</div>
+<script src="../vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            info:{
+                name:'王二',
+                age:21,
+                height:2.2
+            }
+        },
+        methods: {
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    [v-cloak]{
+        display: none;
+    }
+</style>
+<body>
+<div id="app">
+  <!--<h2 v-if="score>=90">优秀</h2>-->
+  <!--<h2 v-else-if="score>=80">良好</h2>-->
+  <!--<h2 v-else-if="score<=60&&score>10">不及格</h2>-->
+  <!--<h2 v-else>去死吧</h2>-->
+    <h2 v-cloak>{{result}}</h2>
+</div>
+<script src="../vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+          score:99
+        },
+        computed:{
+          result(){
+              let showMessage = prompt('请输入您的分数')
+              if(showMessage>=90){
+                  return '优秀'
+              }else if(showMessage>=80){
+                  return '良好'
+              }else if(showMessage<60&&showMessage>10){
+                  return '不合格'
+              }else{
+                  return '去死吧'
+              }
+          }
+        },
+        methods: {
+        }
+    })
+</script>
+</body>
+</html>

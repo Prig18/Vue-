@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户切换案例</title>
+</head>
+<body>
+    <div id="app">
+        <label for="username" v-if="isUser">
+            <span>用户账户</span>
+            <input type="text" id="username" placeholder="用户账户" :key="username">
+        </label>
+        <label for="useremail" v-else>
+            <span>用户邮箱</span>
+            <input type="text" id="useremail" placeholder="用户邮箱" key="email">
+        </label>
+        <button @click="isUser = !isUser">切换登陆方式</button>
+    </div>      
+</body>
+<script src="../vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            message:'你好啊',
+            isUser:true
+        },
+        methods: {
+            
+        },
+    })
+</script>
+</html>

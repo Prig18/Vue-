@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组的那些方法是响应式的</title>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li v-for="i in letters">{{i}}</li>
+    </ul>
+    <button @click="btnClick">按钮</button>
+</div>
+<script src="../vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            letters:['A','B','h','C','D','E']
+        },
+        methods: {
+            btnClick(){
+                //1.push方法
+                //this.letters.push('F')
+
+                //2.pop()方法
+                //- 该方法可以删除数组的最后一个元素
+                //并将删除的元素作为返回值返回
+                //this.letters.pop()
+
+                //3.shift
+                //- 可以删除数组的第一个元素，并将被删除的元素作为返回值返回
+                //this.letters.shift()
+
+                //4.unshift
+                //- 像数组开头添加一个或多个元素，并返回新的数组长度
+                //- 向前边插入元素以后，其他元素会依次调整
+                //this.letters.unshift('G')
+
+                //5.splice
+                /*
+                   splice()
+                       - 可以用于删除数组中的指定元素
+                       - 使用splice()会影响到原数组，会将指定元素从元素组中删除
+                           并将删除的元素作为返回值返回
+                       - 参数:
+                           第一个，表示开始位置索引
+                           第二个，表示要删除的数量
+                           第三个及以后，
+                               可以传递一些新元素，这些元素会自动插入到开始位置索引前面
+               */
+                //this.letters.splice(3)
+
+                //6.sort
+                /*
+                *   sort()
+                *       - 可以用来对数组进行排序
+                *       - 该方法会直接影响到原数组,默认按照Unicode编码进行排序
+                */
+                //this.letters.sort()
+
+                //7.reverse
+                /*
+                *   reverse()
+                *       - 该方法用来反转数组(前边的去后边，后边的去前边)
+                *       - 该方法会直接影响到原数组
+                */
+                //this.letters.reverse()
+
+                //注意：通过索引来修改数组中的元素  ！！！不支持响应
+                //this.letters[0] = "G"
+                //可以通过splice方法修改
+                //this.letters.splice(0,1,'G')
+                //通过vue的set方法
+                //set(要修改的对象，索引值，修改后的值)
+                Vue.set(this.letters,0,'G')
+            }
+        }
+    })
+</script>
+</body>
+</html>
