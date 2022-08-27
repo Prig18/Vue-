@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作业</title>
+</head>
+<style>
+    .red{
+        color: red;
+    }
+</style>
+<body>
+<div id="app">
+    <ul>
+        <li :class={red:liNum===index} v-for="(i,index) in movies" @click='choose(index)'>{{index}}-{{i}}</li>
+    </ul>
+</div>
+<script src="../vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            movies:['海王','海尔兄弟','火影忍者','进击的巨人'],
+            //isRed:true
+            liNum:0
+        },
+        methods: {
+            choose:function (index) {
+                return this.liNum = index
+            }
+        }
+    })
+</script>
+</body>
+</html>

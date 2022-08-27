@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算属性的setter和getter</title>
+</head>
+<body>
+<div id="app">
+    <h2>{{fullName}}</h2>
+</div>
+<script src="../vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            firstname:'Kobe',
+            lastname:'Bryant'
+        },
+        computed:{
+            //fullName:function () {
+            //    return this.firstname + ' ' + this.lastname
+            //}
+            //计算属性一般是没有set方法的，只读读属性
+            fullName:{
+                set:function (newValue) {
+                    console.log('fullName的值被更改')
+                    console.log(newValue)
+                    const names = newValue.split(' ')
+                    this.firstname = names[0]
+                    this.lastname = names[1]
+                },
+                get:function () {
+                    return this.firstname + ' ' + this.lastname
+                }
+            }
+        },
+        methods: {
+        }
+    })
+</script>
+</body>
+</html>

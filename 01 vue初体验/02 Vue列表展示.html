@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue列表展示</title>
+</head>
+<body>
+  <div id="root">
+    <ul>
+      <li v-for="i in movies">{{i}}</li>
+    </ul>
+  </div>
+</body>
+<script src="../vue.js"></script>
+<script>
+  const root = new Vue({
+    el:'#root',
+    data:{
+      movies:['楚门的世界','这个杀手不太冷','投名状','盗梦空间']
+    }
+  })
+</script>
+</html>

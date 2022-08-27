@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-html</title>
+</head>
+<body>
+<div id="root">
+    <h2>{{url}}</h2>
+    <h2 v-html="url"></h2>
+</div>
+</body>
+<script src="../vue.js"></script>
+<script>
+    const root = new Vue({
+        el:'#root',
+        data:{
+            url:'<a href="https://www.bibibi.com">bilibili</a>'
+        }
+    })
+</script>
+</html>

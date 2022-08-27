@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-bind的基本使用</title>
+</head>
+<body>
+<div id="root">
+  <img v-bind:src="imgUrl" alt="">
+  <a v-bind:href="aHref">bilibili</a>
+
+<!--语法糖的写法-->
+  <img :src="imgUrl" alt="">
+  <a :href="aHref">bilibili</a>
+</div>
+</body>
+<script src="../vue.js"></script>
+<script>
+  const root = new Vue({
+    el:'#root',
+    data:{
+     aHref:'https://www.bilibili.com',
+      imgUrl:'https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA10I5RF.img?w=640&h=425&m=6'
+    }
+  })
+</script>
+</html>

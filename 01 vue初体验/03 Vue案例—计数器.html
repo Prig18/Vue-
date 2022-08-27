@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue案例——计数器</title>
+</head>
+<body>
+<div id="root">
+    <button v-on:click='add'>+</button>
+    <span>{{counter}}</span>
+    <button v-on:click='sub'>-</button>
+</div>
+</body>
+<script src="../vue.js"></script>
+<script>
+    const root = new Vue({
+        el:'#root',
+        data:{
+            counter:0
+        },
+        methods:{
+            add:function () {
+                console.log('add被执行')
+                this.counter++
+            },
+            sub:function () {
+                console.log('sub被执行')
+                this.counter--
+            }
+        }
+    })
+</script>
+</html>

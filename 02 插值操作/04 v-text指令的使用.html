@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-text</title>
+</head>
+<body>
+<div id="root">
+  <h2>{{message}}，李银河</h2>
+  <h2 v-text="message">，李银河</h2>
+</div>
+</body>
+<script src="../vue.js"></script>
+<script>
+  const root = new Vue({
+    el:'#root',
+    data:{
+      message:'你好啊'
+    }
+  })
+</script>
+</html>
